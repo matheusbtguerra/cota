@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cota.Api", "Cota.Api\Cota.Api.csproj", "{5348DF87-6A87-49A3-9FF3-F5B796D9E8EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cota.Domain", "Cota.Domain\Cota.Domain.csproj", "{CAA91C40-29B2-4768-933C-0D30EA63D377}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cota.Infrastructure", "Cota.Infrastructure\Cota.Infrastructure.csproj", "{60960E53-EE3F-4CBA-B707-4F5AEE2B9D32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5348DF87-6A87-49A3-9FF3-F5B796D9E8EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5348DF87-6A87-49A3-9FF3-F5B796D9E8EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5348DF87-6A87-49A3-9FF3-F5B796D9E8EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5348DF87-6A87-49A3-9FF3-F5B796D9E8EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA91C40-29B2-4768-933C-0D30EA63D377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA91C40-29B2-4768-933C-0D30EA63D377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA91C40-29B2-4768-933C-0D30EA63D377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA91C40-29B2-4768-933C-0D30EA63D377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60960E53-EE3F-4CBA-B707-4F5AEE2B9D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60960E53-EE3F-4CBA-B707-4F5AEE2B9D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60960E53-EE3F-4CBA-B707-4F5AEE2B9D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60960E53-EE3F-4CBA-B707-4F5AEE2B9D32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
