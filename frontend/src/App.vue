@@ -2,10 +2,7 @@
 
 <template>
   <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="bg-cota-blue text-white p-4 rounded-lg font-medium">Cota 🌊</div>
 </template>
 
 <style scoped></style>
