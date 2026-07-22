@@ -2,5 +2,5 @@ namespace Cota.Domain;
 
 public record RiverReading (
     decimal LevelMeters,
-    DateTimeOffset MesuredAt,
+    DateTimeOffset MeasuredAt,
     String StationName);
