@@ -14,6 +14,14 @@ builder.Services.AddSingleton<ITelemetryClient, FakeTelemetryClient>();
 builder.Services.AddSingleton<LatestReadingStore>();
 builder.Services.AddHostedService<RiverLevelWorker>();
 
+// OpenMeteoClient is registered as a typed client with HttpClientFactory, which provides a pre-configured HttpClient instance for making HTTP requests to the Open-Meteo API. The base address and timeout are set for the HttpClient. 
+builder.Services.AddMemoryCache();
+builder.Services.AddHttpClient<IWeatherClient, OpenMeteoClient>(client =>
+{
+    client.BaseAddress = new Uri("https://api.open-meteo.com/");
+    client.Timeout = TimeSpan.FromSeconds(10);
+});
+
 builder.Services.AddControllers();
 
 var app = builder.Build();
