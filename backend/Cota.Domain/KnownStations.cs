@@ -18,9 +18,14 @@ public class KnownStations
     /// - Alert 2.55 m: alert threshold in the current reference.
     /// - Attention 2.20 m: product margin (not an official threshold) to warn before alert.
     ///
-    /// PENDING: confirm alert and attention against the primary source (the API's own
-    /// HidroInventarioEstacoes route, or the station's official record on ANA's HidroWeb portal).
-    ///
+    /// PENDING → RESOLVED: ANA's station inventory (HidroInventarioEstacoes) does NOT
+    /// expose alert/flood thresholds — it only carries the station's physical registry
+    /// (altitude, drainage area, coordinates). Flood thresholds for the Guaíba are defined
+    /// by RS Civil Defense / SEMA-RS / IPH-UFRGS, not by ANA, so the values below come from
+    /// those authorities (sources cited above) and are the correct primary reference.
+    /// Station identity confirmed via inventory: código 87450020, "USINA DO GASÔMETRO",
+    /// Rio Guaíba, Porto Alegre, coordinates -30.0347 / -51.2419.
+    /// 
     /// Sources:
     /// - Flood 2.60 m (station 87450020): https://www.jornaldocomercio.com/geral/2026/07/1257573-guaiba-esta-abaixo-da-cota-de-inundacao-mas-previsao-de-chuva-mantem-atencao-em-porto-alegre.html
     /// - -1.18 m adjustment to mean sea level (ANA/SGB joint technical note): https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias/ana-e-servico-geologico-do-brasil-fazem-readequacoes-em-estacao-de-monitoramento-do-rio-guaiba-em-porto-alegre-rs
