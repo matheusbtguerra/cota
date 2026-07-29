@@ -10,15 +10,17 @@ public enum RiverStatus
 
 public static class RiverStatusRules
 {
-    public const decimal AttentionThreshold = 2.0m;
-    public const decimal AlertThreshold = 2.5m;
-    public const decimal FloodThreshold = 3.0m;
-
-    public static RiverStatus FromLevel(decimal levelMeters) => levelMeters switch
+    /// <summary>
+    /// Determines the status of a river based on its current level and the thresholds of a specific station.
+    /// </summary>
+    /// <param name="levelMeters">The current level of the river in meters.</param>
+    /// <param name="t">The thresholds for the station.</param>
+    /// <returns>The status of the river.</returns>
+    public static RiverStatus FromLevel(decimal levelMeters, RiverThresholds t) => levelMeters switch
     {
-        >= FloodThreshold => RiverStatus.Flood,
-        >= AlertThreshold => RiverStatus.Alert,
-        >= AttentionThreshold => RiverStatus.Attention,
-        _ => RiverStatus.Normal
+        var l when l >= t.FloodMeter => RiverStatus.Flood,
+        var l when l >= t.AlertMeter    => RiverStatus.Alert,
+        var l when l >= t.AttentionMeter   => RiverStatus.Attention,
+        _                                  => RiverStatus.Normal
     };
 }

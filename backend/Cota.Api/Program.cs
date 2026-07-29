@@ -2,6 +2,7 @@
 using Cota.Api;
 using Cota.Domain;
 using Cota.Infrastructure;
+using Cota.Infrastructure.Ana;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,9 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader()
               .AllowAnyMethod());
 });
+
+// Ana Options
+builder.Services.Configure<AnaOptions>(builder.Configuration.GetSection(AnaOptions.SectionName));
 
 builder.Services.AddControllers();
 
