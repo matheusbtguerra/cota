@@ -37,7 +37,7 @@ public class KnownStations
         Name: "Usina do Gasômetro",
         RegionName: "Porto Alegre — Guaíba",
         Thresholds: new RiverThresholds(
-            AttentionMeter: 2.00m,
-            AlertMeter: 2.55m,     
-            FloodMeter: 2.60m));   
+            AttentionMeters: 2.00m,
+            AlertMeters: 2.55m,     
+            FloodMeters: 2.60m));   
 }

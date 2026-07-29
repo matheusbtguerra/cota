@@ -7,6 +7,6 @@ public record MonitoringStation (
     RiverThresholds Thresholds);
 
 public record RiverThresholds (
-    decimal AlertMeter,
-    decimal AttentionMeter,
-    decimal FloodMeter);
+    decimal AlertMeters,
+    decimal AttentionMeters,
+    decimal FloodMeters);

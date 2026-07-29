@@ -16,16 +16,26 @@ public class RiverController(LatestReadingStore store) : ControllerBase
             return StatusCode(503, new { message = "No reading available yet" });
         }
 
-        // Each station has its own thresholds; V1 uses the Guaíba station's thresholds
-        var thresholds = KnownStations.Guaiba.Thresholds;
-        var status = RiverStatusRules.FromLevel(reading.LevelMeters, thresholds);
+        var station = KnownStations.Guaiba;
+        var status = RiverStatusRules.FromLevel(reading.LevelMeters, station.Thresholds);
 
         return Ok(new
         {
             levelMeters = reading.LevelMeters,
             status = status.ToString(),
             measuredAt = reading.MeasuredAt,
-            station = reading.StationName
+            station = new
+            {
+                code = station.Code,
+                name = station.Name,
+                region = station.RegionName
+            },
+            thresholds = new
+            {
+                attention = station.Thresholds.AttentionMeters,
+                alert = station.Thresholds.AlertMeters,
+                flood = station.Thresholds.FloodMeters
+            }
         });
     }
 }

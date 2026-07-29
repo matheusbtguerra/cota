@@ -18,9 +18,9 @@ public static class RiverStatusRules
     /// <returns>The status of the river.</returns>
     public static RiverStatus FromLevel(decimal levelMeters, RiverThresholds t) => levelMeters switch
     {
-        var l when l >= t.FloodMeter => RiverStatus.Flood,
-        var l when l >= t.AlertMeter    => RiverStatus.Alert,
-        var l when l >= t.AttentionMeter   => RiverStatus.Attention,
+        var l when l >= t.FloodMeters => RiverStatus.Flood,
+        var l when l >= t.AlertMeters    => RiverStatus.Alert,
+        var l when l >= t.AttentionMeters   => RiverStatus.Attention,
         _                                  => RiverStatus.Normal
     };
 }
