@@ -11,7 +11,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<ITelemetryClient, FakeTelemetryClient>();
+// Register the AnaTelemetryClient as a singleton service, which will be used to interact with the ANA API for telemetry data. The client is configured with an HttpClient that has a base address and timeout set for making requests to the ANA API.
+// builder.Services.AddSingleton<ITelemetryClient, FakeTelemetryClient>(); 
+builder.Services.AddHttpClient<ITelemetryClient, AnaTelemetryClient>(client =>
+{
+    client.BaseAddress = new Uri("https://www.ana.gov.br/hidrowebservice/");
+    client.Timeout = TimeSpan.FromSeconds(30);
+});
+
 builder.Services.AddSingleton<LatestReadingStore>();
 builder.Services.AddHostedService<RiverLevelWorker>();
 
